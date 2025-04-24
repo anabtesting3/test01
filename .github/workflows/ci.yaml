@@ -1,0 +1,25 @@
+name: CI - Node.js Build and Test
+
+on:
+  push:
+    branches:
+      - 'feature*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest  # Se ejecuta en un entorno Ubuntu
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2 
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '22.x'  # could be 'LTS'
+
+      - name: Install dependencies
+        run: npm install 
+        
+      - name: Run tests
+        run: npm test 
