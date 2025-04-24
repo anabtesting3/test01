@@ -1,4 +1,3 @@
- // artists
  let listaArtistas = {
     "artista": [{
         nombre: "Peter Doherty"
