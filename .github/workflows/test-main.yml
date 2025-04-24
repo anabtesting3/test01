@@ -27,6 +27,20 @@ jobs:
       - name: Run a one-line script
         run: echo Hello, world!
 
+      # Set up Node.js with a specific version
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  # O cualquier versión que necesites
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Run tests (si tienes tests configurados)
+      - name: Run tests
+        run: npm test
+
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
         run: |
